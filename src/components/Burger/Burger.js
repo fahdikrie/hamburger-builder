@@ -8,6 +8,7 @@ const burger = (props) => {
     .map(ingredientsKey => {
       return [...Array(props.ingredients[ingredientsKey])]
         .map((_, i) => {
+          // console.log(ingredientsKey + i)
           return <BurgerIngredients key={ingredientsKey + i} type={ingredientsKey} />
         });
     })
@@ -15,7 +16,7 @@ const burger = (props) => {
       return arr.concat(el)
     }, []);
 
-    console.log(transformedIngredients);
+    // console.log(transformedIngredients);
 
     if (transformedIngredients.length === 0) {
       transformedIngredients = <p>Bruh ini masih kosong</p>
